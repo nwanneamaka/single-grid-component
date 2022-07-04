@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+:root {
+    --clr-cyan: hsl(179, 62%, 43%);
+    --clr-bright-yellow: hsl(71, 73%, 54%);
+    --clr-light-gray: hsl(204, 43%, 93%);
+    --clr-grayish-blue: hsl(218, 22%, 67%);
+    --padding-box: 1.5em;
+}
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+.attribution { font-size: 11px; text-align: center; color: var(--clr-cyan);}
+.attribution a { color: hsl(228, 45%, 44%); }
+body {
+    background-color: var(--clr-light-gray);
+    margin: 0;
+    padding: 0;
+    font-family: 'Karla';
+    font-size: 1rem;
+    color: white;
+}
+h2, h3 {
+    margin: 0;
+}
+#component {
+    margin: 50px auto;
+}
+.community,
+.subscription,
+.why-us {
+    padding: var(--padding-box);
+    width: 80%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+.community__title,
+.subscription__title,
+.why-us__title {
+    font-size: 1.063rem;
+}
+.community {
+    background-color:white;
+}
+.community__title {
+    color: var(--clr-cyan);
+}
+.community__subtitle {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--clr-bright-yellow);
+}
+.community__description { 
+    font-size: 0.8rem;
+    line-height: 1.75;
+    color: var(--clr-grayish-blue);
+    opacity: .8;
+}
+.subscription {
+    background-color: var(--clr-cyan);
+}
+.subscription__price {
+    margin-top: 0.3em;
+    display: inline-block;
+    font-size: 1.95rem;
+    margin-right: 10px;
+    position: relative;
+}
+.subscription__price::after {
+    content: "per month";
+    width: 100px;
+    position: absolute;
+    top: 12px;
+    font-size: 0.9rem;
+    font-weight: 400;
+    opacity: .6;
+    margin-left: 10px;
+}
+.subscription__description {
+    margin-top: .5em;
+    margin-bottom: .8em;
+    font-size: 0.95rem;
+    opacity: .8;
+}
+.subscription__sign-up {
+    display: inline-block;
+    width: 100%;
+    padding: 0.8em 1em;
+    margin-top: 1em;
+    border-radius: 5px;
+    background-color: var(--clr-bright-yellow);
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0px 4px 8px 4px rgb(0 0 0 / 10%);
+    cursor: pointer;
+}
+.subscription__sign-up:hover {
+    opacity: .6;
+}
+.why-us {
+    background-color: #4abebd;
+}
+.why-us__list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+    font-size: 0.85rem;
+    opacity: .7;
+}
+
+.why-us__item {
+    padding-bottom: 0.35em;
+}
+@media (min-width: 1440px) {
+    body {
+        display: grid;
+        place-items: center;
+        height: 100vh;
+    }
+    #component {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: max-content 1fr;
+        grid-template-areas: 
+        "community community"
+        "subscription why-us" 
+        ;
+        box-shadow: 0px 4px 20px 2px rgb(0 0 0 / 20%);
+        border-radius: 8px;
+        overflow:hidden;
+    }
+    .community {
+        grid-area: community;
+        max-width: 528px;
+    }
+    .subscription {
+        grid-area: subscription;
+    }
+    .why-us {
+        grid-area: why-us;
+    }
+    .community, 
+    .subscription, 
+    .why-us {
+        width: 100%;
+        padding: 2em;
+    }
+    .community__title, 
+    .subscription__title, 
+    .why-us__title { 
+        font-size: 0.875rem;
+    }
+    .community__title {
+        font-size: 1.2rem;
+    }
+    .community__description {
+        margin-bottom: 0;
+    }
+    .community__subtitle {
+        margin-top: 18px;
+        font-size: 0.9rem;
+    }
+    .subscription__price {
+        margin-top: 0.5em;
+        font-size: 1.7rem;
+    }
+    .subscription__price::after {
+        top: 10px;
+        font-size: 0.8rem;
+    }
+    .subscription__description {
+        margin-top: 0.8em;
+        font-size: 0.8rem;
+    }
+   
+    .subscription__sign-up {
+        padding: 1em 1em;
+        font-size: 0.8rem;
+    }
+    .why-us__list {
+        font-size: 0.75rem;
+    }
+}
